@@ -11,12 +11,6 @@
   text-rendering: optimizeLegibility;
 }
 
-a {
-  font-weight: 500;
-  text-decoration: inherit;
-}
-
-
 body {
   margin: 0;
   display: flex;
