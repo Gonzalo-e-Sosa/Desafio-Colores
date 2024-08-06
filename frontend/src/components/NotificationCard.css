@@ -1,0 +1,52 @@
+h3,
+p {
+  margin: 0;
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 10;
+  height: auto;
+  width: 380px;
+  max-width: max-content;
+  padding: 1.5rem 4rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #000;
+  transition: all .3s ease-in-out;
+  transform: scale(105%);
+}
+
+.answer:hover {
+  transform: scale(110%);
+}
+
+.correct {
+  color: rgb(25, 135, 25);
+  height: 40px;
+  width: 40px;
+}
+
+.incorrect {
+  color: rgb(207, 41, 41);
+  height: 40px;
+  width: 40px;
+}
+
+.message {
+  width: 100%;
+  text-align: center;
+  opacity: .8;
+}
+
+.retry {
+  width: 100%;
+}
