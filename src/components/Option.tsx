@@ -1,6 +1,6 @@
 import './Option.css';
 import type { Level as TLevel } from '../types.d';
-import { getRandomHexaNumber } from '../utils/random';
+import { getRandomHexaNumber } from '../utils/func';
 
 interface Props {
   id: number
