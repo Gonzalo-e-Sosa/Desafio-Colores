@@ -1,0 +1,1 @@
+export type Level = 'fácil' | 'normal' | 'difícil';
