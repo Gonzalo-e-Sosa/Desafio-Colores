@@ -1,6 +1,7 @@
 import './App.css'
 import Option from './components/Option';
-import { getRandomHexaNumber } from './utils/random';
+import NotificationCard from './components/NotificationCard';
+import { getRandomHexaNumber, fromRGBtoHexadecimal } from './utils/func';
 import { useState } from 'react';
 import type { Level as TLevel } from './types';
 
@@ -20,14 +21,26 @@ function App() {
 
   const [color, setColor] = useState(getRandomHexaNumber());
   const [level, setLevel] = useState(Difficulty['fácil']);
+  const [answer, setAnswer] = useState<string | null>(null);
   const correctOption = Math.round(Math.random() * 6);
 
-  function handleSelection() {
+  function handleSelection(e: React.MouseEvent) {
+    setAnswer(fromRGBtoHexadecimal(e.currentTarget.style.backgroundColor));
+  }
 
+  function handleRestart(e: React.MouseEvent) {
+    setColor(getRandomHexaNumber())
+    setAnswer(null)
   }
 
   return (
     <main>
+      {answer &&
+        <NotificationCard
+          result={answer === color}
+          btnAction={handleRestart}
+        />
+      }
       <div id='title'>
         <h1>Colores</h1>
         <select
@@ -35,6 +48,7 @@ function App() {
             (e) => {
               setLevel(Number(e.target.value))
               setColor(getRandomHexaNumber())
+              setAnswer(null);
             }
           }
           value={level}
