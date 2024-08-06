@@ -1,9 +1,10 @@
 import './App.css'
 import Option from './components/Option';
 import NotificationCard from './components/NotificationCard';
-import { getRandomHexaNumber, fromRGBtoHexadecimal } from './utils/func';
-import { useState } from 'react';
+import { fromRGBtoHexadecimal } from './utils/func';
+import { useEffect, useState } from 'react';
 import type { Level as TLevel } from './types';
+import { useRandomHexadecimal, useRandomInt } from './hooks/useRandom';
 
 type IDifficulty = {
   [key in TLevel]: number;
@@ -19,19 +20,28 @@ function App() {
   // const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState(false);
 
-  const [color, setColor] = useState(getRandomHexaNumber());
   const [level, setLevel] = useState(Difficulty['fácil']);
   const [answer, setAnswer] = useState<string | null>(null);
-  const correctOption = Math.round(Math.random() * 6);
+  const [color, getNewColor] = useRandomHexadecimal({ length: 6 });
+  const [correctOption, getNewCorrectOption] = useRandomInt({ min: 0, max: 6 });
 
   function handleSelection(e: React.MouseEvent) {
     setAnswer(fromRGBtoHexadecimal(e.currentTarget.style.backgroundColor));
   }
 
-  function handleRestart(e: React.MouseEvent) {
-    setColor(getRandomHexaNumber())
-    setAnswer(null)
+  function handleRestart(_e: React.MouseEvent) {
+    getNewColor();
+    getNewCorrectOption();
+    setAnswer(null);
   }
+
+  useEffect(() => {
+    getNewColor();
+    getNewCorrectOption();
+    setAnswer(null);
+  }, [level])
+
+  console.log({ color, correctOption });
 
   return (
     <main>
@@ -47,8 +57,6 @@ function App() {
           onChange={
             (e) => {
               setLevel(Number(e.target.value))
-              setColor(getRandomHexaNumber())
-              setAnswer(null);
             }
           }
           value={level}
