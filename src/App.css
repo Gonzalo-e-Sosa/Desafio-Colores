@@ -6,7 +6,8 @@
 }
 
 main {
-  min-width: 380px;
+  position: relative;
+  transition: width 300ms ease;
 }
 
 h1 {
