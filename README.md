@@ -1,5 +1,3 @@
-![Video de muestra](https://github.com/Gonzalo-e-Sosa/Desafio-Colores/blob/main/Desaf%C3%ADo%20Colores%20-%20Aplicaci%C3%B3n.mp4)
-
 # Proyecto Fullstack que integra .NET api en el backend y React en el frontend. Monorepositorio.
 
 Este proyecto es una aplicación web que integra un backend desarrollado en C# con .NET y un frontend construido con React. El objetivo del proyecto es proporcionar una API para gestionar colores y una interfaz de usuario que permite interactuar con dicha API de manera intuitiva.
