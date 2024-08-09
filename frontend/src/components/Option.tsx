@@ -1,6 +1,6 @@
 import './Option.css';
 import type { Level as TLevel } from '../types.d';
-import { getRandomHexaNumber } from '../utils/func';
+import { getRandomHexadecimalNumber } from '../utils/func';
 
 interface Props {
   id: number
@@ -17,16 +17,16 @@ const Option: React.FC<Props> = ({ id, seedColor, generateRandom, level, onClick
     switch (level) {
       case 'fácil':
         color = id % 2 === 0
-          ? getRandomModifiedHexaNumber(seedColor, id)
-          : getRandomHexaNumber();
+          ? getRandomModifiedHexadecimalNumber(seedColor, id)
+          : getRandomHexadecimalNumber();
         break;
       case 'normal':
         color = id % 2 === 0
-          ? getRandomModifiedHexaNumber(seedColor, id)
-          : getRandomHexaNumber(id);
+          ? getRandomModifiedHexadecimalNumber(seedColor, id)
+          : getRandomHexadecimalNumber(id);
         break;
       case 'difícil':
-        color = getRandomModifiedHexaNumber(seedColor, id);
+        color = getRandomModifiedHexadecimalNumber(seedColor, id);
         break;
     }
   }
@@ -41,7 +41,7 @@ const Option: React.FC<Props> = ({ id, seedColor, generateRandom, level, onClick
   )
 }
 
-const getRandomModifiedHexaNumber = (seedColor: string, id: number): string => {
+const getRandomModifiedHexadecimalNumber = (seedColor: string, id: number): string => {
   const randomPos = Math.floor(Math.random() * 6);
   const randomNum = Math.floor((Math.random() + id) * 0xff);
   const fractionToChange = seedColor.substring(randomPos, randomPos + 1);
