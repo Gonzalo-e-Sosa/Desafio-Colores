@@ -41,8 +41,6 @@ function App() {
     setAnswer(null);
   }, [level])
 
-  console.log({ color, correctOption });
-
   return (
     <main>
       {answer &&
