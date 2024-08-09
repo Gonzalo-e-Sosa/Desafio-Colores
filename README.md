@@ -1,4 +1,4 @@
-![Video de muestra](https://github.com/Gonzalo-e-Sosa/Desafio-Colores/blob/main/Desaf%C3%ADo%20Colores%20-%20Aplicaci%C3%B3n.mp4)
+![Video de muestra](https://github.com/Gonzalo-e-Sosa/Desafio-Colores/blob/main/Desaf%C3%ADo%20Colores%20-%20Aplicaci%C3%B3n)
 
 # Proyecto Fullstack que integra .NET api en el backend y React en el frontend. Monorepositorio.
 
