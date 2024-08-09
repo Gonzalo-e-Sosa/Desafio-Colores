@@ -4,8 +4,8 @@ Este proyecto es una aplicación web que integra un backend desarrollado en C# c
 
 ## Características
 
-- **Backend en .NET**: Implementación de una API RESTful en C# que maneja las operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para la gestión de colores.
-- **Frontend en React**: Interfaz de usuario moderna y dinámica que consume la API del backend, permitiendo a los usuarios ver, agregar, editar y eliminar colores.
+- **Backend en .NET**: Implementación de una API en C# para obtener numeros(enteros y hexadecimales) generados aleatoriamente.
+- **Frontend en React**: Interfaz que consume la API del backend, permitiendo a los usuarios seleccionar el color correcto entre opciones.
 
 ## Requisitos
 
